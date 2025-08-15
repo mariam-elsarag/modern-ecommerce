@@ -1,1 +1,7 @@
-{ "home": "Home", "welcome": "Welcome!" }
+{
+  "home": "Home",
+  "products": "Products",
+  "contact": "Contact",
+  "login": "Login",
+  "create_account": "Create Account"
+}

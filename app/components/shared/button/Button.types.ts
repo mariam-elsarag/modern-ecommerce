@@ -3,6 +3,8 @@ export type ButtonProps = {
   text?: string | null;
   icon?: React.ReactNode;
   iconDirection?: "right" | "left";
+  round?: "sm" | "lg" | "full";
+  size?: "sm" | "lg";
   variant?: "primary" | "outline" | "outline_dark";
   type?: "submit" | "button";
   loading?: boolean;

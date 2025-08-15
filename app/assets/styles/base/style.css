@@ -75,6 +75,28 @@
   font-size: 12px;
 }
 
+.shadow_md {
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.0509803922);
+}
+
+.shadow_sm {
+  box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.0509803922);
+}
+
+.container {
+  max-width: 1536px;
+  width: 100%;
+  margin: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
 .Toastify__toast-container .Toastify__progress-bar--wrp {
   height: 2.5px !important;
 }

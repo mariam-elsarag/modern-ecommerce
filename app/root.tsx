@@ -16,6 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./assets/styles/config/tailwind_config.css";
 import "./assets/styles/base/style.css";
 import { ToastContainer } from "react-toastify";
+import AppLayout from "./layout/AppLayout";
 
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/logo.svg" },
@@ -54,7 +55,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <>
-      <Outlet />;
+      <AppLayout />
+
       <ToastContainer
         position="top-right"
         autoClose={3000}
