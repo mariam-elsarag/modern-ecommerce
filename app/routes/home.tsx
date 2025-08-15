@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import type { Route } from "./+types/home";
 import { switchLang } from "~/common/utils/switchLang";
+import Button from "~/components/shared/button/Button";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -13,10 +14,7 @@ export default function Home() {
   const { t } = useTranslation();
   return (
     <>
-      <button onClick={() => switchLang()}>test</button>
-
-      <h1 className="mt-4">{t("home")}</h1>
-      <p>{t("welcome")}</p>
+      <Button text="button" variant="outline_dark" />
     </>
   );
 }
