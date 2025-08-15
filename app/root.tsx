@@ -12,7 +12,9 @@ import type { Route } from "./+types/root";
 
 import { useTranslation } from "react-i18next";
 
-import "./assets/styles/config/app.css";
+import "./assets/styles/config/tailwind_config.css";
+import "./assets/styles/base/style.css";
+
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/logo.svg" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
