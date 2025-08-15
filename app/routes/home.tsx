@@ -14,7 +14,7 @@ export default function Home() {
   const { t } = useTranslation();
   return (
     <>
-      <Button text="button" variant="outline_dark" />
+      <Button text="button" />
     </>
   );
 }

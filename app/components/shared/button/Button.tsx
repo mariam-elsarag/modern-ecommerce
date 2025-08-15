@@ -22,7 +22,7 @@ const Button = ({
    h-[40px] md:h-[44px] flex items-center rounded-[4px] body font-medium py-3 px-5 md:px-6 transition-all ease-in-out duration-300
     ${isCenterd && "justify-center text-center"}
    ${loading || disabled ? "cursor-default" : "cursor-pointer"}
-  `;
+  ${disabled ? "!bg-neutral-black-100 !text-neutral-black-200" : ""} `;
 
   const styles = {
     primary: `bg-neutral-black-900 text-white hover:bg-neutral-black-800`,
