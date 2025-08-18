@@ -34,7 +34,7 @@ const Button = ({
     full: "rounded-full",
   };
   const sizes = {
-    sm: "h-[38px] px-4 py-3",
+    sm: "h-[38px] px-4 py-3 px-4",
     lg: "h-[40px] md:h-[44px] py-3 px-5 md:px-6",
   };
   const styles = {

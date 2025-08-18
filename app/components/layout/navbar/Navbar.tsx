@@ -42,7 +42,7 @@ const Navbar = () => {
                 }   flex items-center justify-center text-center body font-medium  transition-all ease-in-out duration-300 `
               }
             >
-              {t(item.link)}
+              {t(item.label)}
             </NavLink>
           ))}
         </nav>
@@ -97,7 +97,7 @@ const Mobile_Navbar = ({ isOpen, onClose }: MobileNavbarProps) => {
                 }   py-2 body font-medium  transition-all ease-in-out duration-300 `
               }
             >
-              {t(item.link)}
+              {t(item.label)}
             </NavLink>
           ))}
         </nav>
