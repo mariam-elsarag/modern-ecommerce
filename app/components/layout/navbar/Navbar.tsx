@@ -53,7 +53,6 @@ const Navbar = () => {
               key={btn.to}
               variant={btn.variant}
               text={btn.text}
-              round="full"
               size="sm"
             />
           ))}
