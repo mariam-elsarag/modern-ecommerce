@@ -1,5 +1,5 @@
 import React from "react";
-
+import type { FooterProps } from "./footer.types";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { Logo2 } from "~/assets/images/Image";
@@ -28,12 +28,15 @@ const footerLinkList = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({ variant = "primary" }: FooterProps) => {
   const { t } = useTranslation();
-
+  const styles = {
+    primary: "bg-white",
+    secondary: "bg-neutral-white-100",
+  };
   return (
     <footer
-      className={`bg-neutral-white-100 pt-10  lg:pt-20 flex flex-col gap-6 lg:gap-10  `}
+      className={`${styles[variant]} pt-10  lg:pt-20 flex flex-col gap-6 lg:gap-10  `}
     >
       {/* top footer */}
       <section className="container grid sm:grid-cols-2 md:grid-cols-[200px_1fr_1fr_1fr] lg:grid-cols-[300px_1fr_1fr_1fr] gap-6 sm:gap-10 md:gap-6 lg:gap-10">

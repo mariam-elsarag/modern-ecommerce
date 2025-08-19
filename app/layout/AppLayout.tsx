@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router";
 import Footer from "~/components/layout/footer/Footer";
 import Navbar from "~/components/layout/navbar/Navbar";
+import Newsletter from "~/components/layout/newsLetter/Newsletter";
 
 const AppLayout = () => {
   return (
@@ -10,7 +11,10 @@ const AppLayout = () => {
       <div className="flex-1">
         <Outlet />
       </div>
-      <Footer />
+      <div>
+        <Newsletter />
+        <Footer />
+      </div>
     </div>
   );
 };

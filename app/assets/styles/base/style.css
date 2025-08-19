@@ -1,10 +1,5 @@
 .h1 {
-  font-size: 28px;
-}
-@media (min-width: 991px) and (max-width: 1023px) {
-  .h1 {
-    font-size: 32px;
-  }
+  font-size: 32px;
 }
 @media (min-width: 1024px) {
   .h1 {
@@ -13,12 +8,7 @@
 }
 
 .h2 {
-  font-size: 18px;
-}
-@media (min-width: 786px) and (max-width: 990px) {
-  .h2 {
-    font-size: 24px;
-  }
+  font-size: 24px;
 }
 @media (min-width: 991px) and (max-width: 1023px) {
   .h2 {
@@ -32,12 +22,7 @@
 }
 
 .h3 {
-  font-size: 16px;
-}
-@media (min-width: 991px) and (max-width: 1023px) {
-  .h3 {
-    font-size: 18px;
-  }
+  font-size: 18px;
 }
 @media (min-width: 1024px) {
   .h3 {
@@ -46,17 +31,7 @@
 }
 
 .h4 {
-  font-size: 14px;
-}
-@media (min-width: 786px) and (max-width: 990px) {
-  .h4 {
-    font-size: 16px;
-  }
-}
-@media (min-width: 991px) {
-  .h4 {
-    font-size: 18px;
-  }
+  font-size: 18px;
 }
 
 .h5 {
@@ -67,7 +42,11 @@
   font-size: 14px;
 }
 
-.body {
+.input::-moz-placeholder {
+  font-size: 14px;
+}
+
+.body, .input, .input::placeholder {
   font-size: 14px;
 }
 
@@ -115,6 +94,35 @@
   }
 }
 
+.invalid, .input.invalid {
+  border: 1px solid var(--color-semantic-red-900);
+}
+
+.input {
+  background-color: transparent;
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid var(--color-neutral-black-200);
+  padding: 10px 15px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  outline: none;
+  box-shadow: none;
+  font-weight: 500;
+  color: var(--color-neutral-black-500);
+}
+.input::-moz-placeholder {
+  color: var(--color-neutral-black-300);
+  font-weight: 500;
+}
+.input::placeholder {
+  color: var(--color-neutral-black-300);
+  font-weight: 500;
+}
 .Toastify__toast-container .Toastify__progress-bar--wrp {
   height: 2.5px !important;
 }

@@ -22,13 +22,18 @@ const Navbar = () => {
         <Link to="/">
           <img src={Logo} alt="logo" className="h-[38px]" />
         </Link>
-        <button
-          role="button"
-          onClick={() => setToggleNavbar((pre) => !pre)}
-          className=" bg-transparent outline-0 shadow-none flex md:hidden items-center justify-center w-6 h-6 cursor-pointer"
-        >
-          <MenuIcon />
-        </button>
+
+        <Button
+          icon={<MenuIcon width="22" height="22" />}
+          variant="outline"
+          size="xs"
+          className="md:hidden"
+          handleClick={() => {
+            console.log("roma");
+            setToggleNavbar((pre) => !pre);
+          }}
+        />
+
         <nav className="hidden md:flex items-center gap-8 ">
           {menuList?.map((item) => (
             <NavLink
@@ -68,6 +73,7 @@ const Navbar = () => {
 const Mobile_Navbar = ({ isOpen, onClose }: MobileNavbarProps) => {
   const { t } = useTranslation();
   const ref = useOutsideClick(onClose);
+  console.log("kkkkkkkkkkkkkkk");
   return (
     <div
       className={`flex md:hidden ${

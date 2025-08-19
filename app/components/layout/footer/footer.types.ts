@@ -1,3 +1,7 @@
+export type FooterProps = {
+  variant?: "primary" | "secondary";
+};
+
 type Link = {
   label: string;
   to: string;

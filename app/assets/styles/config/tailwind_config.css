@@ -69,3 +69,9 @@
   --color-semantic-yellow-800: #f6bb33;
   --color-semantic-yellow-900: #f3b40a;
 }
+
+@layer utilities {
+  .main_h {
+    @apply h-[40px] md:h-[45px];
+  }
+}

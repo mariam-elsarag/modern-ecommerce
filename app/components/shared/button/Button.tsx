@@ -17,6 +17,7 @@ const Button = ({
   disabled = false,
   round = "sm",
   size = "lg",
+  className,
 }: ButtonProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -34,8 +35,9 @@ const Button = ({
     full: "rounded-full",
   };
   const sizes = {
+    xs: "h-[30px] !w-[30px]",
     sm: "h-[38px] px-4 py-3 px-4",
-    lg: "h-[40px] md:h-[44px] py-3 px-5 md:px-6",
+    lg: "main_h py-3 px-5 md:px-6",
   };
   const styles = {
     primary: `bg-neutral-black-900 text-white hover:bg-neutral-black-800`,
@@ -49,7 +51,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={`${base} ${styles[variant]} ${radious[round]} ${sizes[size]} `}
+      className={`${base} ${className ?? ""} ${styles[variant]} ${radious[round]} ${sizes[size]} `}
       disabled={loading || disabled}
       onClick={() => {
         if (to) navigate(to);
