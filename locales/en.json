@@ -28,5 +28,19 @@
     "subscribe": "Subscribe"
   },
   "email_placeholder": "Your email address",
-  "email_pattern_error": "Please enter a valid email, e.g., example@domain.com."
+  "email_pattern_error": "Please enter a valid email, e.g., example@domain.com.",
+  "hero": {
+    "title_1": "Fresh Arrivals Online",
+    "title_1_des": "Discover our newest collection today.",
+    "view_collection": "View Collection",
+
+    "title_2": "Experience Pure Sound",
+    "title_2_des": "Your perfect headphones await!",
+
+    "title_3": "Discover PlayStation 5 Today!",
+    "title_3_des": "Next-level gaming starts here.",
+
+    "title_4": "Apple MacBook Pro",
+    "title_4_des": "Power meets elegance — the MacBook Pro is here for you!"
+  }
 }

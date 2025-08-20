@@ -23,7 +23,8 @@
     "react-i18next": "^15.6.1",
     "react-router": "^7.7.1",
     "react-toastify": "^11.0.5",
-    "sass": "^1.90.0"
+    "sass": "^1.90.0",
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@react-router/dev": "^7.7.1",
