@@ -42,5 +42,13 @@
 
     "title_4": "Apple MacBook Pro",
     "title_4_des": "Power meets elegance — the MacBook Pro is here for you!"
+  },
+  "features": {
+    "title_1": "Free Shipping",
+    "des_1": "Upgrade your style today and get FREE shipping on all orders! Don't miss out.",
+    "title_2": "Satisfaction Guarantee",
+    "des_2": "Shop confidently with our Satisfaction Guarantee: Love it or get a refund.",
+    "title_3": "Secure Payment",
+    "des_3": "Your security is our priority. Your payments are secure with us."
   }
 }

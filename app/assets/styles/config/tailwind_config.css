@@ -74,4 +74,7 @@
   .main_h {
     @apply h-[40px] md:h-[45px];
   }
+  .section_gap {
+    @apply flex flex-col gap-20;
+  }
 }

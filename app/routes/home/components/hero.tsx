@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 
 import { Autoplay } from "swiper/modules";
 import { HeroImg1, HeroImg2, HeroImg3, HeroImg4 } from "~/assets/images/Image";
-import type { HeroItemProps } from "./hero.types";
+import type { HeroItemComponentProps, HeroItemProps } from "./hero.types";
 import { useTranslation } from "react-i18next";
 
 const heroList: HeroItemProps[] = [
@@ -36,10 +36,10 @@ const Hero = () => {
     </section>
   );
 };
-const Hero_Item = ({ data }: HeroItemProps) => {
+const Hero_Item = ({ data }: HeroItemComponentProps) => {
   const { t } = useTranslation();
   return (
-    <div className="grid sm:grid-cols-2 md::grid-cols-[1fr_400px] gap-10 sm:gap-6 h-full content-center justify-center items-center  min-h-[50vh]">
+    <div className="grid sm:grid-cols-2 md:grid-cols-[1fr_400px] gap-10 sm:gap-6 h-full content-center justify-center items-center  min-h-[50vh]">
       <div>
         <div className="flex flex-col gap-2 text-center sm:text-start">
           <h2 className="h2 font-semibold text-neutral-black-800">
@@ -53,7 +53,8 @@ const Hero_Item = ({ data }: HeroItemProps) => {
       <figure className="relative h-[300px] md:h-[340px] flex flex-col justify-center items-center ">
         <img
           src={data.img}
-          alt="img"
+          aria-label={t(data.title)}
+          alt={t(data.title)}
           className="h-[280px] md:h-[300px] lg:h-[300px] absolute bottom-0 z-10   start-1/2 -translate-x-1/2 "
         />
         <div className="h-[300px] w-[300px] md:w-[340px] md:h-[340px] rounded-full bg-neutral-white-200 absolute z-[1] opacity-60" />

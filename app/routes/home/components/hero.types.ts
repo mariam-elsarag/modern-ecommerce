@@ -3,3 +3,6 @@ export type HeroItemProps = {
   description: string;
   img: string;
 };
+export type HeroItemComponentProps = {
+  data: HeroItemProps;
+};
