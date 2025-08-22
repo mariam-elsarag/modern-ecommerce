@@ -8,7 +8,7 @@ export interface Product {
   isFavorite: null | boolean;
   colors?: string[];
   brand?: string;
-  category?: string;
+  categories?: string[];
   stock?: number;
   isFeatured?: boolean;
   isBestSelling?: boolean;
