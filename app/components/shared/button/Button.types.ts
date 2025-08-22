@@ -5,7 +5,7 @@ export type ButtonProps = {
   iconDirection?: "right" | "left";
   round?: "sm" | "lg" | "full";
   size?: "xs" | "sm" | "lg";
-  variant?: "primary" | "outline" | "outline_dark";
+  variant?: "primary" | "outline" | "outline_dark" | "tertiery";
   type?: "submit" | "button";
   loading?: boolean;
   hasFullWidth?: boolean;

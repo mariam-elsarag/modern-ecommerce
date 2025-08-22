@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
-import { MenuIcon } from "~/assets/icons/Icon";
+import { LanguageIcon, MenuIcon } from "~/assets/icons/Icon";
 import { Logo } from "~/assets/images/Image";
 import { menuList } from "~/common/lists/list";
 import Button from "~/components/shared/button/Button";
 import type { MobileNavbarProps } from "./Navbar.types";
 import useOutsideClick from "~/hooks/useOutsideClick";
 import { useTranslation } from "react-i18next";
+import { switchLang } from "~/common/utils/switchLang";
 
 const buttonsList = [
   { text: "login", variant: "outline", to: "/account/login" },
@@ -51,16 +52,25 @@ const Navbar = () => {
             </NavLink>
           ))}
         </nav>
-        <div className="hidden md:flex items-center gap-2">
-          {buttonsList?.map((btn) => (
-            <Button
-              to={btn.to}
-              key={btn.to}
-              variant={btn.variant}
-              text={btn.text}
-              size="sm"
-            />
-          ))}
+        <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
+            {buttonsList?.map((btn) => (
+              <Button
+                to={btn.to}
+                key={btn.to}
+                variant={btn.variant}
+                text={btn.text}
+                size="sm"
+              />
+            ))}
+          </div>{" "}
+          <Button
+            icon={<LanguageIcon width="20" height="20" />}
+            variant="tertiery"
+            size="sm"
+            className="hover:bg-transparent"
+            handleClick={switchLang}
+          />
         </div>
       </header>
       <Mobile_Navbar

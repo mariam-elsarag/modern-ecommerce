@@ -43,7 +43,7 @@ const Button = ({
     primary: `bg-neutral-black-900 text-white hover:bg-neutral-black-800`,
     outline:
       "bg-white border border-neutral-black-200 text-neutral-black-500  hover:text-neutral-black-900 ",
-
+    tertiery: "bg-white bg-neutral-black-800 hover:bg-neutral-white-100",
     outline_dark:
       "bg-white border border-neutral-black-900 text-neutral-black-900 ",
   };

@@ -7,6 +7,7 @@ import { Autoplay } from "swiper/modules";
 import { HeroImg1, HeroImg2, HeroImg3, HeroImg4 } from "~/assets/images/Image";
 import type { HeroItemComponentProps, HeroItemProps } from "./hero.types";
 import { useTranslation } from "react-i18next";
+import { currentLanguageCode } from "~/common/utils/switchLang";
 
 const heroList: HeroItemProps[] = [
   { img: HeroImg1, title: "hero.title_1", description: "hero.title_1_des" },
@@ -18,6 +19,7 @@ const Hero = () => {
   return (
     <section className="bg-neutral-white-100 min-h-[440px] container py-10">
       <Swiper
+        key={currentLanguageCode}
         loop={true}
         speed={800}
         autoplay={{
@@ -50,12 +52,12 @@ const Hero_Item = ({ data }: HeroItemComponentProps) => {
           </p>
         </div>
       </div>
-      <figure className="relative h-[300px] md:h-[340px] flex flex-col justify-center items-center ">
+      <figure className="relative overflow-hidden h-[300px] md:h-[340px] flex flex-col justify-center items-center ">
         <img
           src={data.img}
           aria-label={t(data.title)}
           alt={t(data.title)}
-          className="h-[280px] md:h-[300px] lg:h-[300px] absolute bottom-0 z-10   start-1/2 -translate-x-1/2 "
+          className={`h-[280px] md:h-[300px] lg:h-[300px] absolute bottom-0 z-10   ${currentLanguageCode === "en" ? "right-1/2 translate-x-1/2" : "left-1/2 -translate-x-1/2"}  `}
         />
         <div className="h-[300px] w-[300px] md:w-[340px] md:h-[340px] rounded-full bg-neutral-white-200 absolute z-[1] opacity-60" />
       </figure>

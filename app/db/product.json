@@ -1,0 +1,32 @@
+{
+  "bestSelling": [
+    {
+      "id": 1,
+      "title": "Elegant Ebony Sweatshirts",
+      "price": 35.0,
+      "rate": 3.4,
+      "image": "/products/black_t-shirt.png"
+    },
+    {
+      "id": 2,
+      "title": "Apple AirPods Pro 2nd gen",
+      "price": 399.99,
+      "rate": 4.5,
+      "image": "/products/apple_earphone_image1.png"
+    },
+    {
+      "id": 3,
+      "title": "Sleek and Cozy Black",
+      "price": 57.0,
+      "rate": 5,
+      "image": "/products/jacket.png"
+    },
+    {
+      "id": 4,
+      "title": "PlayStation 5",
+      "price": 329.99,
+      "rate": 5,
+      "image": "/products/playstation_image.png"
+    }
+  ]
+}

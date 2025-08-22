@@ -41,7 +41,7 @@ const Newsletter = () => {
   });
   const onSubmit = async () => {};
   return (
-    <section className="bg-neutral-white-100 min-h-[200px] container py-10 grid md:grid-cols-2 gap-6 justify-center text-center md:justify-baseline md:text-start content-center">
+    <section className="bg-neutral-white-100 min-h-[200px] container py-10 grid md:grid-cols-2 gap-6  text-center md:justify-baseline md:text-start content-center">
       <div className="flex flex-col gap-2">
         <h2 className=" text-neutral-black-900 font-bold h3">
           {t("newsletter.title")}
@@ -52,7 +52,7 @@ const Newsletter = () => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={`max-w-[450px]  flex  gap-4 ${errors ? "items-start" : "items-center"} `}
+        className={`max-w-[450px]  flex  gap-4 ${errors ? "items-start" : "items-center"} mx-auto md:ms-auto `}
       >
         <Form_Builder formList={formList} control={control} errors={errors} />
         <Button type="submit" text="newsletter.subscribe" />

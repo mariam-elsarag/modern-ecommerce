@@ -50,5 +50,11 @@
     "des_2": "Shop confidently with our Satisfaction Guarantee: Love it or get a refund.",
     "title_3": "Secure Payment",
     "des_3": "Your security is our priority. Your payments are secure with us."
-  }
+  },
+  "home.category": {
+    "title": "Browse Our Fashion Paradise!",
+    "description": "Step into a world of style and explore our diverse collection of clothing categories.",
+    "start_browsing": "Start Browsing"
+  },
+  "network_error": "Something went wrong. Please try again."
 }
