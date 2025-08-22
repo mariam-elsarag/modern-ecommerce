@@ -15,6 +15,7 @@ const Button = ({
   handleClick,
   isCenterd = true,
   disabled = false,
+  hasHover = true,
   round = "sm",
   size = "lg",
   className,
@@ -31,19 +32,17 @@ const Button = ({
   const radious = {
     sm: "rounded-[4px]",
     lg: "rounded-lg",
-
     full: "rounded-full",
   };
   const sizes = {
-    xs: "h-[30px] !w-[30px]",
+    xs: "!h-[30px] !w-[30px]",
     sm: "h-[38px] px-4 py-3 px-4",
     lg: "main_h py-3 px-5 md:px-6",
   };
   const styles = {
-    primary: `bg-neutral-black-900 text-white hover:bg-neutral-black-800`,
-    outline:
-      "bg-white border border-neutral-black-200 text-neutral-black-500  hover:text-neutral-black-900 ",
-    tertiery: "bg-white bg-neutral-black-800 hover:bg-neutral-white-100",
+    primary: `bg-neutral-black-900 text-white ${hasHover ? "hover:bg-neutral-black-800" : ""}`,
+    outline: `bg-white border border-neutral-black-200 text-neutral-black-500  ${hasHover ? "hover:text-neutral-black-900" : ""}`,
+    tertiery: `bg-white bg-neutral-black-800 ${hasHover ? "hover:bg-neutral-white-100" : ""}`,
     outline_dark:
       "bg-white border border-neutral-black-900 text-neutral-black-900 ",
   };

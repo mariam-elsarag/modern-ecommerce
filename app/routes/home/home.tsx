@@ -9,6 +9,8 @@ import Best_Selling from "./components/best_Selling/Best_Selling";
 import axiosInstance from "~/services/axiosInstance";
 import type { Product } from "~/common/types/Type";
 import { API } from "~/services/apiUrl";
+import Product_List from "./components/product_list/Product_List";
+import { useState } from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,19 +19,24 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 export async function clientLoader() {
-  const response = await axiosInstance.get<Product[]>(API.home.bestSelling);
+  const response = await axiosInstance.get<Product[]>(API.products);
 
-  return { bestSelling: response.data };
+  return { data: response.data };
 }
 export default function Home({ loaderData }: Route.ComponentProps) {
   const { t } = useTranslation();
-  const { bestSelling } = loaderData;
+
+  const { data } = loaderData;
+  const bestSelling = data.filter(
+    (product) => product.isBestSelling && product
+  );
   return (
     <section className="section_gap">
       <Hero />
       <Features />
       <Best_Selling products={bestSelling} />
       <Category />
+      <Product_List data={data} />
     </section>
   );
 }

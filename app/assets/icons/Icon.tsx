@@ -234,19 +234,20 @@ export const AddToCartIcon = ({
 export const FavoriteIcon = ({
   width = "24",
   height = "24",
-  fill = "var(--color-neutral-black-500)",
+  fill = "white",
+  stroke = "var(--color-neutral-black-500)",
 }: iconProps) => {
   return (
     <svg
       width={width}
       height={height}
       viewBox="0 0 24 24"
-      fill="none"
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M12.0048 19L4.791 12.5513C0.870448 8.68258 6.63333 1.25337 12.0048 7.26384C17.3763 1.25337 23.1141 8.70729 19.22 12.5513L12.0048 19Z"
-        stroke={fill}
+        stroke={stroke}
         strokeWidth="1.42857"
         strokeLinecap="round"
         strokeLinejoin="round"

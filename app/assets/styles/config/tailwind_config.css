@@ -78,4 +78,7 @@
   .section_gap {
     @apply flex flex-col gap-20;
   }
+  .section_p {
+    @apply py-8 md:py-10 lg:py-16;
+  }
 }

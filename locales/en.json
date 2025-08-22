@@ -56,5 +56,9 @@
     "description": "Step into a world of style and explore our diverse collection of clothing categories.",
     "start_browsing": "Start Browsing"
   },
-  "network_error": "Something went wrong. Please try again."
+  "network_error": "Something went wrong. Please try again.",
+  "shop_now": "Shop Now",
+  "best_selling": "Best Selling",
+  "featured": "Featured",
+  "latest": "Latest"
 }

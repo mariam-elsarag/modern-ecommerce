@@ -10,6 +10,7 @@ export type ButtonProps = {
   loading?: boolean;
   hasFullWidth?: boolean;
   isCenterd?: boolean;
+  hasHover?: boolean;
   disabled?: boolean;
   handleClick?: () => void;
   className?: string;
