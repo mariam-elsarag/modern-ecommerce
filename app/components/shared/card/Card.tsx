@@ -5,6 +5,7 @@ import { formatPrice } from "~/common/utils/formatPrice";
 import Rate from "../rate/Rate";
 import Button from "../button/Button";
 import { FavoriteIcon } from "~/assets/icons/Icon";
+import { Link } from "react-router";
 
 const Card = ({ data }: CardComponentProps) => {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ const Card = ({ data }: CardComponentProps) => {
     data?.isFavorite || false
   );
   return (
-    <div className="bg-white rounded-[4px] flex flex-col gap-6">
+    <article className="bg-white rounded-[4px] flex flex-col gap-6 z-[1]">
       <figure className="relative bg-neutral-white-100 h-[312px] flex items-center justify-center rounded-[4px]">
         <Button
           icon={
@@ -27,23 +28,30 @@ const Card = ({ data }: CardComponentProps) => {
               }
             />
           }
-          handleClick={() => setToggleFavorite((pre) => !pre)}
-          className="absolute top-2 end-2"
+          handleClick={() => {
+            setToggleFavorite((pre) => !pre);
+          }}
+          className="absolute top-2 end-2 z-10"
           size="xs"
           variant="tertiery"
           round="full"
           hasHover={false}
         />
-        <img
-          src={data.image}
-          alt={data.title}
-          className="h-[250px] rounded-[4px] object-cover "
-        />
+        <Link to={`/product/${data.id}`}>
+          <img
+            src={data.image}
+            alt={data.title}
+            className="h-[250px] rounded-[4px] object-cover"
+          />
+        </Link>
       </figure>
+
       <div className="flex flex-col gap-2">
-        <h3 className="line-clamp-1 body font-medium text-neutral-black-900">
-          {t(data.title)}
-        </h3>
+        <Link to={`/product/${data.id}`}>
+          <h3 className="line-clamp-1 body font-medium text-neutral-black-900">
+            {t(data.title)}
+          </h3>
+        </Link>
         <Rate rate={data?.rate} />
         <div>
           <span className="truncate text-neutral-black-600 body">
@@ -51,7 +59,7 @@ const Card = ({ data }: CardComponentProps) => {
           </span>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

@@ -4,7 +4,7 @@ import { FullStarIcon, StarIcon } from "~/assets/icons/Icon";
 
 const Rate = ({
   rate = 0,
-
+  fillColor = "var(--color-semantic-yellow-900)",
   onChange,
   changeValue = false,
   hasText = true,
@@ -33,9 +33,9 @@ const Rate = ({
             }}
           >
             {i + 1 <= rate ? (
-              <FullStarIcon fill="var(--color-semantic-yellow-900)" />
+              <FullStarIcon fill={fillColor} />
             ) : (
-              <StarIcon fill="var(--color-semantic-yellow-900)" />
+              <StarIcon fill={fillColor} />
             )}
           </span>
         ))}
