@@ -1,15 +1,18 @@
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { TabPropsType } from "./Tab.types";
+import type { ListItemProps, TabPropsType } from "./Tab.types";
 import { NavLink } from "react-router";
 
 const Tab = ({
   list = [],
-  variant = "filter",
-
+  type = "filter",
+  varinat = "primary",
   setValue,
   fieldName,
   currentValue,
+  isScrollable = true,
+  direction = "row",
+  containerClassName,
 }: TabPropsType) => {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -58,18 +61,25 @@ const Tab = ({
     setIsDragging(false);
   };
 
-  const handleClick = (val: string | number | undefined) => {
-    if (!setValue) return;
-    if (variant === "filter" && fieldName) {
-      setValue((prev: any) => ({ ...prev, [fieldName]: val }));
-    } else if (variant === "click") {
-      setValue(val);
-    }
-  };
-
+  if (!isScrollable) {
+    return (
+      <aside
+        className={`flex ${direction === "row" ? "" : "flex-col"}  gap-4 ${containerClassName ?? ""} `}
+      >
+        <Tap_Content
+          list={list}
+          type={type}
+          varinat={varinat}
+          setValue={setValue}
+          fieldName={fieldName}
+          currentValue={currentValue}
+        />
+      </aside>
+    );
+  }
   return (
-    <section
-      className="flex gap-4 overflow-x-auto cursor-grab select-none"
+    <aside
+      className={`flex gap-4 overflow-x-auto cursor-grab select-none ${containerClassName ?? ""}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUpOrLeave}
       onMouseMove={handleMouseMove}
@@ -79,39 +89,89 @@ const Tab = ({
       onTouchEnd={handleTouchEnd}
       ref={containerRef}
     >
+      <Tap_Content
+        list={list}
+        type={type}
+        varinat={varinat}
+        setValue={setValue}
+        fieldName={fieldName}
+        currentValue={currentValue}
+      />
+    </aside>
+  );
+};
+const Tap_Content = ({
+  list = [],
+  type = "filter",
+  varinat = "primary",
+  setValue,
+  fieldName,
+  currentValue,
+}: TabPropsType) => {
+  const { t } = useTranslation();
+
+  const handleClick = (val: string | number | undefined) => {
+    if (!setValue) return;
+    if (type === "filter" && fieldName) {
+      setValue((prev: any) => ({ ...prev, [fieldName]: val }));
+    } else if (type === "click") {
+      setValue(val);
+    }
+  };
+
+  const style = {
+    primary: `px-4 py-[3px] rounded-full cursor-pointer body font-medium border text-neutral-black-500 border-transparent flex items-center gap-2`,
+    secondary:
+      " cursor-pointer flex items-center gap-2 py-2 px-6 h-[41px] rounded-lg !text-neutral-black-500",
+  };
+  const active = {
+    primary: "!text-neutral-black-800 !border-neutral-white-200",
+    secondary: `bg-neutral-white-100 !text-neutral-black-900`,
+  };
+  return (
+    <>
       {list.map((item) => {
         const isActive =
-          variant !== "navigation" &&
+          type !== "navigation" &&
           ((!currentValue && item.default) || currentValue === item.value);
-
-        return variant === "navigation" ? (
+        const Icon = item?.icon;
+        return type === "navigation" ? (
           <NavLink
             key={item.title}
             to={item.to || ""}
-            className={`px-4 py-[3px] rounded-full cursor-pointer body font-medium border ${
-              isActive
-                ? "text-neutral-black-800 border-neutral-white-200"
-                : "text-neutral-black-500 border-transparent"
-            }`}
+            className={` ${style[varinat]} ${isActive ? active[varinat] : ""}`}
           >
+            {item?.icon && (
+              <Icon
+                fill={
+                  isActive
+                    ? "var(--color-neutral-black-900)"
+                    : "var(--color-neutral-black-500)"
+                }
+              />
+            )}
             {t(item.title)}
           </NavLink>
         ) : (
           <span
             key={item.title}
             onClick={() => handleClick(item.value)}
-            className={`px-4 py-[3px] rounded-full cursor-pointer body font-medium border ${
-              isActive
-                ? "text-neutral-black-800 border-neutral-white-200"
-                : "text-neutral-black-500 border-transparent"
-            }`}
+            className={` ${style[varinat]} ${isActive ? active[varinat] : ""}`}
           >
+            {item?.icon && (
+              <Icon
+                fill={
+                  isActive
+                    ? "var(--color-neutral-black-900)"
+                    : "var(--color-neutral-black-500)"
+                }
+              />
+            )}
             {t(item.title)}
           </span>
         );
       })}
-    </section>
+    </>
   );
 };
-
 export default Tab;
