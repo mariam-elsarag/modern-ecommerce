@@ -6,7 +6,7 @@ import { NavLink } from "react-router";
 const Tab = ({
   list = [],
   type = "filter",
-  varinat = "primary",
+  variant = "primary",
   setValue,
   fieldName,
   currentValue,
@@ -69,7 +69,7 @@ const Tab = ({
         <Tap_Content
           list={list}
           type={type}
-          varinat={varinat}
+          variant={variant}
           setValue={setValue}
           fieldName={fieldName}
           currentValue={currentValue}
@@ -92,7 +92,7 @@ const Tab = ({
       <Tap_Content
         list={list}
         type={type}
-        varinat={varinat}
+        variant={variant}
         setValue={setValue}
         fieldName={fieldName}
         currentValue={currentValue}
@@ -103,7 +103,7 @@ const Tab = ({
 const Tap_Content = ({
   list = [],
   type = "filter",
-  varinat = "primary",
+  variant = "primary",
   setValue,
   fieldName,
   currentValue,
@@ -119,12 +119,12 @@ const Tap_Content = ({
     }
   };
 
-  const style = {
+  const styles = {
     primary: `px-4 py-[3px] rounded-full cursor-pointer body font-medium border text-neutral-black-500 border-transparent flex items-center gap-2`,
     secondary:
       " cursor-pointer flex items-center gap-2 py-2 px-6 h-[41px] rounded-lg !text-neutral-black-500",
   };
-  const active = {
+  const activeStyles = {
     primary: "!text-neutral-black-800 !border-neutral-white-200",
     secondary: `bg-neutral-white-100 !text-neutral-black-900`,
   };
@@ -134,14 +134,19 @@ const Tap_Content = ({
         const isActive =
           type !== "navigation" &&
           ((!currentValue && item.default) || currentValue === item.value);
-        const Icon = item?.icon;
+        const Icon = item.icon;
+
+        const commonClasses = `${styles[variant]} ${isActive ? activeStyles[variant] : ""}`;
+
         return type === "navigation" ? (
           <NavLink
             key={item.title}
             to={item.to || ""}
-            className={` ${style[varinat]} ${isActive ? active[varinat] : ""}`}
+            className={({ isActive }) =>
+              `${styles[variant]} ${isActive ? activeStyles[variant] : ""}`
+            }
           >
-            {item?.icon && (
+            {Icon && (
               <Icon
                 fill={
                   isActive
@@ -155,10 +160,12 @@ const Tap_Content = ({
         ) : (
           <span
             key={item.title}
+            role="tab"
+            aria-selected={isActive}
             onClick={() => handleClick(item.value)}
-            className={` ${style[varinat]} ${isActive ? active[varinat] : ""}`}
+            className={commonClasses}
           >
-            {item?.icon && (
+            {Icon && (
               <Icon
                 fill={
                   isActive

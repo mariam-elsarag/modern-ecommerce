@@ -1,17 +1,19 @@
+import type { jsx } from "react/jsx-runtime";
+
 export type ListItemProps = {
   title: string;
   to?: string;
   value?: string | number;
   default?: boolean;
   icon?:
-    | React.ReactElement<unknown | string>
-    | React.JSXElementConstructor<any>;
+    | React.ComponentType<React.SVGProps<SVGSVGElement>>
+    | (() => jsx.Element);
 };
 
 export type TabPropsType = {
   list: ListItemProps[];
   type?: "navigation" | "filter" | "click";
-  varinat?: "primary" | "secondary";
+  variant?: "primary" | "secondary";
   value?: string;
   setValue?: React.Dispatch<any>;
   currentValue?: string | number;
