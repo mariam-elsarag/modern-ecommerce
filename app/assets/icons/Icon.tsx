@@ -626,6 +626,36 @@ export const MinusIcon = ({
     </svg>
   );
 };
+export const PlusIcon = ({
+  width = "24",
+  height = "24",
+  fill = "var(--color-neutral-black-500)",
+}: iconProps) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 6V18"
+        stroke={fill}
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6 12H18"
+        stroke={fill}
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 export const CloseIcon = ({
   width = "24",
   height = "24",
