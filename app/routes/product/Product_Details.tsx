@@ -47,7 +47,7 @@ const Product_Details = ({ loaderData }: Route.ComponentProps) => {
     <section className="container section_gap">
       <section className="flex flex-col gap-4">
         <Page_Header breadcrumbsList={breadcrumbsList} />
-        <Product_Info />
+        <Product_Info product={product} />
       </section>
       <Similar_Products products={similarProducts} />
     </section>
