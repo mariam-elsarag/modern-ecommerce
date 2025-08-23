@@ -12,10 +12,17 @@ import type { Route } from "./+types/root";
 
 import { useTranslation } from "react-i18next";
 
+// primereact
+import { PrimeReactProvider } from "primereact/api";
+import "primereact/resources/themes/tailwind-light/theme.css";
+
+// toast
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// style
 import "./assets/styles/config/tailwind_config.css";
 import "./assets/styles/base/style.css";
-import { ToastContainer } from "react-toastify";
 import AppLayout from "./layout/AppLayout";
 
 export const links: Route.LinksFunction = () => [
@@ -55,7 +62,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <>
-      <AppLayout />
+      <PrimeReactProvider>
+        <AppLayout />
+      </PrimeReactProvider>
 
       <ToastContainer
         position="top-right"
