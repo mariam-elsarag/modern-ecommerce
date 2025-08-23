@@ -2,6 +2,7 @@ export interface Product {
   id: number;
   cover: string;
   images?: string[];
+  sizes?: "xs" | "s" | "m" | "l" | "xl" | "xxl"[];
   title: string;
   description?: string;
   price: number;
@@ -14,4 +15,5 @@ export interface Product {
   isFeatured?: boolean;
   isBestSelling?: boolean;
   createdAt: Date;
+  quantity?: number;
 }
