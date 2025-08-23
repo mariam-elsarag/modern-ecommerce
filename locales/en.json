@@ -62,5 +62,11 @@
   "featured": "Featured",
   "latest": "Latest",
   "you_might_also": "You might also like",
-  "similar_products": "SIMILAR PRODUCTS"
+  "similar_products": "SIMILAR PRODUCTS",
+  "_review": "{{rate}} — Reviews",
+  "in_stock": "IN STOCK",
+  "avalible_colors": "Available Colors",
+  "select_size": "Select Size",
+  "quantity": "Quantity",
+  "add_to_cart": "Add to cart"
 }
