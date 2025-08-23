@@ -39,7 +39,7 @@ const Card = ({ data }: CardComponentProps) => {
         />
         <Link to={`/product/${data.id}`}>
           <img
-            src={data.image}
+            src={data.cover}
             alt={data.title}
             className="h-[250px] rounded-[4px] object-cover"
           />
