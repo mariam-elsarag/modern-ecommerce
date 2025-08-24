@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 import { formatPrice } from "~/common/utils/formatPrice";
 
 type ProductInfoPropsType = {
-  product: Product;
+  product: Product | undefined;
 };
 const Product_Info = ({ product }: ProductInfoPropsType) => {
   const { t } = useTranslation();

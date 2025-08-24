@@ -37,7 +37,7 @@ const Product_List = ({ data }) => {
       <header className="w-fit mx-auto">
         <Tab
           list={filterList}
-          variant="click"
+          type="click"
           currentValue={filter}
           setValue={handleFilter}
         />

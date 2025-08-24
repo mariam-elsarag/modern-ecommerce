@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import type { breadCrumbListType } from "~/components/shared/header/page_header/Page_Header.types";
 import Product_Info from "./components/Product_Info";
+import Product_Details_and_review from "./components/Product_Details_and_review";
 
 export async function clientLoader({ params }: Route.LoaderArgs) {
   const { id } = params;
@@ -49,6 +50,7 @@ const Product_Details = ({ loaderData }: Route.ComponentProps) => {
         <Page_Header breadcrumbsList={breadcrumbsList} />
         <Product_Info product={product} />
       </section>
+      <Product_Details_and_review product={product} />
       <Similar_Products products={similarProducts} />
     </section>
   );
