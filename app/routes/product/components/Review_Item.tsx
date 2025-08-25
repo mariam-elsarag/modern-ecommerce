@@ -1,5 +1,6 @@
 import React from "react";
 import type { ReviewType } from "~/common/types/Type";
+import { formatDateToMonth } from "~/common/utils/formatDateToMonth";
 
 import Avatar from "~/components/shared/avatar/Avatar";
 import Rate from "~/components/shared/rate/Rate";
@@ -24,7 +25,7 @@ const Review_Item = ({ review }: ReviewItemType) => {
             />
           </div>
           <p className="text-neutral-black-500 label font-medium">
-            {review?.createdAt}
+            {review?.createdAt ? formatDateToMonth(review?.createdAt) : "-"}
           </p>
         </header>
         <p className="text-neutral-black-500 body ">{review.review}</p>
