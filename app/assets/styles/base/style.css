@@ -259,4 +259,40 @@ body:dir(rtl) .p-menuitem-separator {
 }
 .swiper-pagination-bullet-active {
   background-color: var(--color-neutral-black-900) !important;
+}
+
+.p-dialog-mask {
+  background: rgba(0, 0, 0, 0.0470588235) !important;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.p-dialog {
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.p-dialog-header {
+  padding: 0px !important;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.p-dialog-header-icons {
+  display: none;
+}
+
+.p-dialog-content {
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+@media (max-width: 1536px) {
+  .p-dialog-content {
+    padding: 20px 16px 16px;
+  }
 }/*# sourceMappingURL=style.css.map */
