@@ -7,7 +7,7 @@ import {
   type ControllerRenderProps,
   type FieldError,
 } from "react-hook-form";
-import type { an } from "node_modules/react-router/dist/development/context-DohQKLID.mjs";
+import Rate from "../rate/Rate";
 
 const Form_Builder = ({
   formList,
@@ -44,6 +44,37 @@ const Form_Builder = ({
             }}
             min={0}
             onWheel={(e) => e.currentTarget.blur()}
+          />
+        );
+      case "textarea":
+        return (
+          <textarea
+            id={item?.id}
+            name={item?.name}
+            value={field.value || item.value || ""}
+            disabled={item.disabled || loading}
+            placeholder={item.placeholder ? t(item.placeholder) : ""}
+            className={`flex-1 w-full input resize-none h-[128px] ${isInvalid ? "invalid" : ""} ${item.inputClassName || ""}`}
+            autoFocus={item.autFocus}
+            onChange={(e) => {
+              field.onChange(e);
+              if (item?.action) {
+                item?.action?.(e);
+              }
+            }}
+          />
+        );
+      case "rate":
+        return (
+          <Rate
+            rate={field.value || item.value || ""}
+            fillColor={item?.fillColor}
+            onChange={(e) => {
+              field.onChange(e);
+            }}
+            changeValue
+            hasText={false}
+            hasError={isInvalid}
           />
         );
       default:

@@ -8,6 +8,7 @@ const Rate = ({
   onChange,
   changeValue = false,
   hasText = true,
+  hasError = false,
 }: RatePropsType) => {
   const handleRate = (n: number) => {
     if (changeValue) {
@@ -25,17 +26,18 @@ const Rate = ({
             role="button"
             aria-label="rate"
             className={changeValue ? "cursor-pointer" : "cursor-default"}
-            onMouseEnter={() => {
-              handleRate(i + 1);
-            }}
             onClick={() => {
               handleRate(i + 1);
             }}
           >
             {i + 1 <= rate ? (
-              <FullStarIcon fill={fillColor} />
+              <FullStarIcon
+                fill={hasError ? "var(--color-semantic-red-900)" : fillColor}
+              />
             ) : (
-              <StarIcon fill={fillColor} />
+              <StarIcon
+                fill={hasError ? "var(--color-semantic-red-900)" : fillColor}
+              />
             )}
           </span>
         ))}

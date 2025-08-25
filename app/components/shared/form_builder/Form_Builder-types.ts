@@ -5,7 +5,8 @@ export type FormType =
   | "otp"
   | "phone_number"
   | "password"
-  | "textarea";
+  | "textarea"
+  | "rate";
 
 type OptionListType = {
   name: string;
@@ -40,6 +41,7 @@ export type FormListItemType = {
   autFocus?: boolean;
   loading?: boolean;
   errorFill?: string;
+  fillColor?: string;
   action?: (e: React.ChangeEvent<HTMLElement>) => void;
   onInput?: (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
