@@ -72,5 +72,11 @@
   "details": "Details",
   "detail": "Detail",
   "reviews": "Reviews",
-  "write_review": "Write a review"
+  "write_review": "Write a review",
+  "max_length_error": "The maximum number of characters is {{number}}",
+  "email_is_required": "Email is required",
+  "full_name_is_required": "Full name is required",
+  "review_is_required": "Review is required",
+  "rate_is_required": "Rate is required",
+  "submit_your_review": "Submit Your Review"
 }
