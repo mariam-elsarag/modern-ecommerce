@@ -17,3 +17,12 @@ export interface Product {
   createdAt: Date;
   quantity?: number;
 }
+
+export type ReviewType = {
+  productId: number;
+  fullName: string | null;
+  avatar: string | null;
+  rate: number;
+  review: string;
+  createdAt?: Date;
+};

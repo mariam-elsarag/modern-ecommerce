@@ -157,7 +157,7 @@
   "reviews": [
     {
       "productId": 1,
-      "full_name": "John Doe",
+      "fullName": "John Doe",
       "avatar": null,
       "createdAt": "2025-08-12T09:00:00Z",
       "rate": 5,
@@ -165,7 +165,7 @@
     },
     {
       "productId": 1,
-      "full_name": "Sarah Lee",
+      "fullName": "Sarah Lee",
       "avatar": null,
       "createdAt": "2025-08-13T10:30:00Z",
       "rate": 4,
@@ -173,7 +173,7 @@
     },
     {
       "productId": 2,
-      "full_name": "Michael Chen",
+      "fullName": "Michael Chen",
       "avatar": null,
       "createdAt": "2025-08-14T11:45:00Z",
       "rate": 5,
@@ -181,7 +181,7 @@
     },
     {
       "productId": 2,
-      "full_name": "Emma Watson",
+      "fullName": "Emma Watson",
       "avatar": null,
       "createdAt": "2025-08-15T13:20:00Z",
       "rate": 4,
@@ -189,7 +189,7 @@
     },
     {
       "productId": 3,
-      "full_name": "Carlos Rivera",
+      "fullName": "Carlos Rivera",
       "avatar": null,
       "createdAt": "2025-08-16T14:00:00Z",
       "rate": 5,
@@ -197,7 +197,7 @@
     },
     {
       "productId": 4,
-      "full_name": "Anna Müller",
+      "fullName": "Anna Müller",
       "avatar": null,
       "createdAt": "2025-08-17T15:30:00Z",
       "rate": 5,
@@ -205,7 +205,7 @@
     },
     {
       "productId": 5,
-      "full_name": "David Kim",
+      "fullName": "David Kim",
       "avatar": null,
       "createdAt": "2025-08-18T16:45:00Z",
       "rate": 4,
@@ -213,7 +213,7 @@
     },
     {
       "productId": 6,
-      "full_name": "Sophia Johnson",
+      "fullName": "Sophia Johnson",
       "avatar": null,
       "createdAt": "2025-08-19T18:00:00Z",
       "rate": 4,
@@ -221,7 +221,7 @@
     },
     {
       "productId": 7,
-      "full_name": "Ali Hassan",
+      "fullName": "Ali Hassan",
       "avatar": null,
       "createdAt": "2025-08-20T19:15:00Z",
       "rate": 5,
@@ -229,7 +229,7 @@
     },
     {
       "productId": 8,
-      "full_name": "Lara Croft",
+      "fullName": "Lara Croft",
       "avatar": null,
       "createdAt": "2025-08-21T20:30:00Z",
       "rate": 4,

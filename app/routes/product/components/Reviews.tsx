@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { Product } from "~/common/types/Type";
+import type { Product, ReviewType } from "~/common/types/Type";
 import Button from "~/components/shared/button/Button";
+import usePaginatedData from "~/hooks/usePaginatedData";
+import { API } from "~/services/apiUrl";
+import Review_Item from "./Review_Item";
 
 type ReviewProps = {
   product: Product | undefined;
 };
+
 const Reviews = ({ product }: ReviewProps) => {
   const { t } = useTranslation();
+  const { data, loading, error, setQuery } = usePaginatedData<ReviewType>({
+    endpoint: `${API.reviews}`,
+  });
+  const [reviews, setReviews] = useState<ReviewType[]>([]);
+  useEffect(() => {
+    if (product?.id) {
+      setQuery({ productId: product.id });
+    }
+  }, [product?.id]);
+
+  useEffect(() => {
+    if (data) {
+      setReviews(data.filter((review) => review.productId == product?.id));
+    }
+  }, [data, product?.id]);
+
   return (
     <section className="flex flex-col gap-6">
       <header className="flex flex-col gap-10 pb-4 border-b border-neutral-white-200">
@@ -24,6 +44,9 @@ const Reviews = ({ product }: ReviewProps) => {
         </div>
         <Button text="write_review" variant="outline_dark" />
       </header>
+      {reviews?.map((review, index) => (
+        <Review_Item review={review} key={index} />
+      ))}
     </section>
   );
 };
