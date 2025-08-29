@@ -1,6 +1,15 @@
-import { type RouteConfig, index, route } from "@react-router/dev/routes";
+import {
+  type RouteConfig,
+  index,
+  layout,
+  prefix,
+  route,
+} from "@react-router/dev/routes";
 
 export default [
   index("routes/home/home.tsx"),
-  route("product/:id", "routes/product/Product_Details.tsx"),
+  ...prefix("product", [
+    index("routes/product/Products.tsx"),
+    route(":id", "routes/product/Product_Details.tsx"),
+  ]),
 ] satisfies RouteConfig;

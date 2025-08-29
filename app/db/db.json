@@ -235,5 +235,30 @@
       "rate": 4,
       "review": "Comfortable fabric, fits perfectly."
     }
+  ],
+  "categories": [
+    { "id": 1, "title": "fashion", "title_ar": "fashion" },
+    { "id": 2, "title": "accessories", "title_ar": "accessories" },
+    { "id": 3, "title": "audio", "title_ar": "audio" },
+    { "id": 4, "title": "clothing", "title_ar": "clothing" },
+    { "id": 5, "title": "electronics", "title_ar": "electronics" },
+    { "id": 6, "title": "gaming", "title_ar": "gaming" },
+    { "id": 7, "title": "mobile", "title_ar": "mobile" },
+    { "id": 8, "title": "outerwear", "title_ar": "outerwear" }
+  ],
+  "colors": [
+    { "id": 1, "color": "black" },
+    { "id": 2, "color": "#ffffff" },
+    { "id": 3, "color": "creamy" },
+    { "id": 4, "color": "gray" },
+    { "id": 5, "color": "green" }
+  ],
+  "sizes": [
+    { "id": 1, "size": "xs" },
+    { "id": 2, "size": "sm" },
+    { "id": 3, "size": "lg" },
+    { "id": 4, "size": "md" },
+    { "id": 5, "size": "xl" },
+    { "id": 6, "size": "xxl" }
   ]
 }

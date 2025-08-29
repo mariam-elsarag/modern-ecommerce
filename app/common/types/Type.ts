@@ -26,3 +26,19 @@ export type ReviewType = {
   review: string;
   createdAt?: Date;
 };
+
+export type CategoryType = {
+  id: number;
+  title: string;
+  title_ar: string;
+};
+
+export type ColorsType = {
+  id: number;
+  color: string;
+};
+
+export type SizesType = {
+  id: number;
+  size: string;
+};

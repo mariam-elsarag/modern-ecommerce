@@ -12,10 +12,10 @@ const Page_Header = ({
   const { t } = useTranslation();
   const style = {
     primary: ``,
-    secondary: ``,
+    secondary: `bg-neutral-white-100 container py-[18px] `,
   };
   return (
-    <header className={`${style[variant]}`}>
+    <header className={`  ${style[variant]}`}>
       {type === "breadCrumb" ? (
         <BreadCrumb model={breadcrumbsList} />
       ) : (

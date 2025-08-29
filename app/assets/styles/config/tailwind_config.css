@@ -81,4 +81,10 @@
   .section_p {
     @apply py-8 md:py-10 lg:py-16;
   }
+  .color_container {
+    @apply w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer transition-all ease-in-out duration-300;
+  }
+  .size_container {
+    @apply w-10 h-10 flex items-center justify-center rounded-[4px] border text-neutral-black-500  font-medium  cursor-pointer transition-all ease-in-out duration-300;
+  }
 }

@@ -87,10 +87,10 @@ const Product_Info = ({ product }: ProductInfoPropsType) => {
               {t("avalible_colors")}
             </h4>
             <div className="flex items-center gap-2.5">
-              {product.colors?.map((item) => (
+              {product?.colors?.map((item) => (
                 <span
                   key={item}
-                  className={` w-8 h-8 rounded-full flex items-center justify-center border border-neutral-black-100 cursor-pointer`}
+                  className={`color_container border-neutral-black-100`}
                 >
                   <span
                     style={{ background: item }}
@@ -108,10 +108,10 @@ const Product_Info = ({ product }: ProductInfoPropsType) => {
               {t("select_size")}
             </h4>
             <div className="flex items-center gap-2.5">
-              {product.sizes?.map((item) => (
+              {product?.sizes?.map((item) => (
                 <div
                   key={item}
-                  className={`w-10 h-10 flex items-center justify-center rounded-[4px] border border-neutral-black-100 text-neutral-black-500 label font-medium`}
+                  className={`size_container  border-neutral-black-100 label`}
                 >
                   {item}
                 </div>
