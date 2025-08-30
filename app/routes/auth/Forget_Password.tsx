@@ -1,19 +1,19 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { emailRegex } from "~/common/constant/validator";
+import { handleError } from "~/common/utils/handleError";
+import Button from "~/components/shared/button/Button";
+import Form_Builder from "~/components/shared/form_builder/Form_Builder";
+import type { FormListItemType } from "~/components/shared/form_builder/Form_Builder-types";
 import Page_Header from "~/components/shared/header/page_header/Page_Header";
 import type { breadCrumbListType } from "~/components/shared/header/page_header/Page_Header.types";
-import Google_Btn from "./components/Google_Btn";
-import { useForm } from "react-hook-form";
-import type { FormListItemType } from "~/components/shared/form_builder/Form_Builder-types";
-import { emailRegex, passwordPattern } from "~/common/constant/validator";
-import { handleError } from "~/common/utils/handleError";
-import Form_Builder from "~/components/shared/form_builder/Form_Builder";
-import Button from "~/components/shared/button/Button";
 
-const Login = () => {
+const Forget_Password = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   // ___________ useform _________
   const {
     control,
@@ -23,7 +23,6 @@ const Login = () => {
   } = useForm({
     defaultValues: {
       email: null,
-      password: null,
     },
     mode: "onChange",
   });
@@ -45,36 +44,21 @@ const Login = () => {
         },
       },
     },
-    {
-      id: "2",
-      formType: "password",
-      name: "password",
-      label: "password",
-      fieldName: "password",
-      validator: {
-        required: "password_is_required",
-        pattern: {
-          value: passwordPattern,
-          message: "password_pattern_error",
-        },
-      },
-      showForgetPassword: true,
-      inlineError: true,
-    },
   ];
   const breadcrumbsList: breadCrumbListType[] = [
     {
-      label: t("home"),
-      template: () => <Link to={`/`}>{t("home")}</Link>,
+      label: t("login"),
+      template: () => <Link to={`/login`}>{t("login")}</Link>,
     },
     {
-      label: t("login"),
+      label: t("forget_password"),
     },
   ];
   // _________________function __________-
   const onSubmit = async (data) => {
     try {
       setLoading(true);
+      navigate(`/${data?.email}/5/reset-password`);
     } catch (err) {
       handleError(err, t);
     } finally {
@@ -84,37 +68,34 @@ const Login = () => {
   return (
     <main className="flex flex-col gap-20">
       <Page_Header
-        title="login"
+        title="forget_password"
         breadcrumbsList={breadcrumbsList}
         variant="secondary"
       />
       <section className="container">
         <div className=" max-w-[400px] sm:max-w-[320px] flex flex-col mx-auto w-full gap-8">
-          <Google_Btn />
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="px-4 flex flex-col gap-10"
           >
             <fieldset className="flex flex-col gap-6">
+              <p className="body text-neutral-black-500">
+                {t("forget_password_des")}
+              </p>
               <Form_Builder
                 formList={formList}
                 control={control}
                 errors={errors}
               />
             </fieldset>
-            <footer className="flex flex-col gap-6">
-              <Button
-                loading={loading}
-                disabled={loading || !isValid}
-                text="login"
-                type="submit"
-                hasFullWidth
-              />
-              <p className="text-neutral-black-500 body text-center">
-                <span>{t("don't_have_an_account")}</span>
-                <Link to="/register">{t("sign_up")}</Link>
-              </p>
-            </footer>
+
+            <Button
+              loading={loading}
+              disabled={loading || !isValid}
+              text="send_reset_link"
+              type="submit"
+              hasFullWidth
+            />
           </form>
         </div>
       </section>
@@ -122,4 +103,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Forget_Password;

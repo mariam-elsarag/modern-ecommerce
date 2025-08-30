@@ -110,7 +110,7 @@ const Form_Builder = ({
               <label
                 className={`body text-neutral-black-600 capitalize font-medium ${formItem.labelClassName || ""}`}
                 htmlFor={formItem.fieldName}
-                dangerouslySetInnerHTML={{ __html: formItem.label }}
+                dangerouslySetInnerHTML={{ __html: t(String(formItem.label)) }}
               />
             )}
             {formItem.fieldName && (

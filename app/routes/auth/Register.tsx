@@ -1,17 +1,17 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { emailRegex, passwordPattern } from "~/common/constant/validator";
+import { handleError } from "~/common/utils/handleError";
+import type { FormListItemType } from "~/components/shared/form_builder/Form_Builder-types";
 import Page_Header from "~/components/shared/header/page_header/Page_Header";
 import type { breadCrumbListType } from "~/components/shared/header/page_header/Page_Header.types";
 import Google_Btn from "./components/Google_Btn";
-import { useForm } from "react-hook-form";
-import type { FormListItemType } from "~/components/shared/form_builder/Form_Builder-types";
-import { emailRegex, passwordPattern } from "~/common/constant/validator";
-import { handleError } from "~/common/utils/handleError";
 import Form_Builder from "~/components/shared/form_builder/Form_Builder";
 import Button from "~/components/shared/button/Button";
 
-const Login = () => {
+const Register = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   // ___________ useform _________
@@ -22,6 +22,7 @@ const Login = () => {
     handleSubmit,
   } = useForm({
     defaultValues: {
+      fullName: "",
       email: null,
       password: null,
     },
@@ -31,6 +32,21 @@ const Login = () => {
   const formList: FormListItemType[] = [
     {
       id: "1",
+      formType: "input",
+      type: "text",
+      name: "fullName",
+      label: "name",
+      fieldName: "fullName",
+      validator: {
+        required: "name_is_required",
+        maxLength: {
+          value: 30,
+          message: t("max_length_error", { number: 30 }),
+        },
+      },
+    },
+    {
+      id: "2",
       formType: "input",
       type: "text",
       name: "email",
@@ -46,7 +62,7 @@ const Login = () => {
       },
     },
     {
-      id: "2",
+      id: "3",
       formType: "password",
       name: "password",
       label: "password",
@@ -58,8 +74,8 @@ const Login = () => {
           message: "password_pattern_error",
         },
       },
-      showForgetPassword: true,
-      inlineError: true,
+      showForgetPassword: false,
+      inlineError: false,
     },
   ];
   const breadcrumbsList: breadCrumbListType[] = [
@@ -68,7 +84,7 @@ const Login = () => {
       template: () => <Link to={`/`}>{t("home")}</Link>,
     },
     {
-      label: t("login"),
+      label: t("sign_up"),
     },
   ];
   // _________________function __________-
@@ -84,7 +100,7 @@ const Login = () => {
   return (
     <main className="flex flex-col gap-20">
       <Page_Header
-        title="login"
+        title="sign_up"
         breadcrumbsList={breadcrumbsList}
         variant="secondary"
       />
@@ -95,24 +111,29 @@ const Login = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="px-4 flex flex-col gap-10"
           >
-            <fieldset className="flex flex-col gap-6">
-              <Form_Builder
-                formList={formList}
-                control={control}
-                errors={errors}
-              />
-            </fieldset>
+            <div className="flex flex-col gap-4">
+              <fieldset className="flex flex-col gap-6">
+                <Form_Builder
+                  formList={formList}
+                  control={control}
+                  errors={errors}
+                />
+              </fieldset>
+              <p className="text-neutral-black-500 label font-medium">
+                {t("register_des")}
+              </p>
+            </div>
             <footer className="flex flex-col gap-6">
               <Button
                 loading={loading}
                 disabled={loading || !isValid}
-                text="login"
+                text="create_account"
                 type="submit"
                 hasFullWidth
               />
               <p className="text-neutral-black-500 body text-center">
-                <span>{t("don't_have_an_account")}</span>
-                <Link to="/register">{t("sign_up")}</Link>
+                <span>{t("already_have_an_account")}</span>
+                <Link to="/register">{t("login")}</Link>
               </p>
             </footer>
           </form>
@@ -122,4 +143,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

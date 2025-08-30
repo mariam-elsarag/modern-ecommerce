@@ -22,7 +22,9 @@ const Password = ({
 }: PasswordPropsType) => {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col gap-4">
+    <div
+      className={`flex flex-col ${item?.inlineError || item?.showForgetPassword ? "gap-4" : ""} `}
+    >
       <input
         id={item?.id}
         inputMode="text"
