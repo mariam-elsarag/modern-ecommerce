@@ -134,6 +134,11 @@
   color: var(--color-neutral-black-300);
   font-weight: 500;
 }
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .Toastify__toast-container .Toastify__progress-bar--wrp {
   height: 2.5px !important;
 }

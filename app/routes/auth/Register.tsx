@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
-import { emailRegex, passwordPattern } from "~/common/constant/validator";
+import {
+  emailRegex,
+  passwordPattern,
+  phonePattern,
+} from "~/common/constant/validator";
 import { handleError } from "~/common/utils/handleError";
 import type { FormListItemType } from "~/components/shared/form_builder/Form_Builder-types";
 import Page_Header from "~/components/shared/header/page_header/Page_Header";
@@ -63,6 +67,22 @@ const Register = () => {
     },
     {
       id: "3",
+      formType: "phone",
+      type: "number",
+      name: "phone",
+      label: "phone",
+      fieldName: "phone",
+      inputMode: "tel",
+      validator: {
+        required: "phone_is_required",
+        pattern: {
+          value: phonePattern,
+          message: "phone_pattern_error",
+        },
+      },
+    },
+    {
+      id: "4",
       formType: "password",
       name: "password",
       label: "password",

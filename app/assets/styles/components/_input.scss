@@ -28,3 +28,11 @@
     @extend .invalid;
   }
 }
+input {
+  // remove arrows from number input
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

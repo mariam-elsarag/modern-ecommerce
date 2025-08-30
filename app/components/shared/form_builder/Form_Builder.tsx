@@ -9,6 +9,7 @@ import {
 } from "react-hook-form";
 import Rate from "../rate/Rate";
 import Password from "./Password";
+import Phone_Number from "./Phone_Number";
 
 const Form_Builder = ({
   formList,
@@ -50,6 +51,22 @@ const Form_Builder = ({
       case "password":
         return (
           <Password
+            value={field.value || item.value || ""}
+            disabled={item.disabled || loading}
+            isInvalid={isInvalid}
+            item={item}
+            error={error?.message || errors?.[item?.fieldName]?.message}
+            handleChange={(e) => {
+              field.onChange(e);
+              if (item?.action) {
+                item?.action?.(e);
+              }
+            }}
+          />
+        );
+      case "phone":
+        return (
+          <Phone_Number
             value={field.value || item.value || ""}
             disabled={item.disabled || loading}
             isInvalid={isInvalid}

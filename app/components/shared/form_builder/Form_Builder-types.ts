@@ -3,7 +3,7 @@ import type { Control, FieldErrors } from "react-hook-form";
 export type FormType =
   | "input"
   | "otp"
-  | "phone_number"
+  | "phone"
   | "password"
   | "textarea"
   | "rate";
