@@ -5,4 +5,5 @@ export const API = {
   categories: "/categories",
   colors: "/colors",
   sizes: "/sizes",
+  cart: "/cart",
 };

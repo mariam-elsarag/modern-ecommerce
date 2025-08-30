@@ -6,6 +6,7 @@ export type breadCrumbListType = {
 export type PageHeaderTypes = {
   type?: "label" | "breadCrumb";
   label?: string;
+  title?: string;
   breadcrumbsList?: breadCrumbListType[];
   variant?: "primary" | "secondary";
 };

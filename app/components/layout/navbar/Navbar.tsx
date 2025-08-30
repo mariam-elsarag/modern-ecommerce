@@ -10,8 +10,8 @@ import { useTranslation } from "react-i18next";
 import { switchLang } from "~/common/utils/switchLang";
 
 const buttonsList = [
-  { text: "login", variant: "outline", to: "/account/login" },
-  { text: "create_account", variant: "primary", to: "/account/register" },
+  { text: "login", variant: "outline", to: "/login" },
+  { text: "create_account", variant: "primary", to: "/register" },
 ] as const;
 
 const Navbar = () => {

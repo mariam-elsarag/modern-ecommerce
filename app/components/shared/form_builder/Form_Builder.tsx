@@ -8,6 +8,7 @@ import {
   type FieldError,
 } from "react-hook-form";
 import Rate from "../rate/Rate";
+import Password from "./Password";
 
 const Form_Builder = ({
   formList,
@@ -44,6 +45,22 @@ const Form_Builder = ({
             }}
             min={0}
             onWheel={(e) => e.currentTarget.blur()}
+          />
+        );
+      case "password":
+        return (
+          <Password
+            value={field.value || item.value || ""}
+            disabled={item.disabled || loading}
+            isInvalid={isInvalid}
+            item={item}
+            error={error?.message || errors?.[item?.fieldName]?.message}
+            handleChange={(e) => {
+              field.onChange(e);
+              if (item?.action) {
+                item?.action?.(e);
+              }
+            }}
           />
         );
       case "textarea":
@@ -110,26 +127,27 @@ const Form_Builder = ({
             {formItem.info && !errors?.[formItem.fieldName]?.message && (
               <p className="text-neutral-white-100 body">{formItem.info}</p>
             )}
-            {errors?.[formItem.fieldName]?.message && (
-              <p className="flex items-center gap-1">
-                <span>
-                  <InfoIcon
-                    width="20"
-                    height="20"
-                    fill={
-                      formItem?.errorFill ?? "var(--color-semantic-red-900)"
-                    }
-                  />
-                </span>
-                <span
-                  className={`text-semantic-red-900 text-xs ${
-                    formItem?.errorClassName ?? ""
-                  }`}
-                >
-                  {t(String(errors[formItem.fieldName]?.message))}
-                </span>
-              </p>
-            )}
+            {errors?.[formItem.fieldName]?.message &&
+              !formItem?.inlineError && (
+                <p className="flex items-center gap-1">
+                  <span>
+                    <InfoIcon
+                      width="20"
+                      height="20"
+                      fill={
+                        formItem?.errorFill ?? "var(--color-semantic-red-900)"
+                      }
+                    />
+                  </span>
+                  <span
+                    className={`text-semantic-red-900 text-xs ${
+                      formItem?.errorClassName ?? ""
+                    }`}
+                  >
+                    {t(String(errors[formItem.fieldName]?.message))}
+                  </span>
+                </p>
+              )}
           </fieldset>
         ))}
     </>

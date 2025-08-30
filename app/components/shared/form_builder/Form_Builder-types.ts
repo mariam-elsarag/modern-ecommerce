@@ -41,7 +41,9 @@ export type FormListItemType = {
   autFocus?: boolean;
   loading?: boolean;
   errorFill?: string;
+  inlineError?: boolean;
   fillColor?: string;
+  showForgetPassword?: boolean;
   action?: (e: React.ChangeEvent<HTMLElement>) => void;
   onInput?: (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,

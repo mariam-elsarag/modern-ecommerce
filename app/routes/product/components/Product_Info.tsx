@@ -17,6 +17,7 @@ import {
 import Badge from "~/components/shared/badge/Badge";
 import { useTranslation } from "react-i18next";
 import { formatPrice } from "~/common/utils/formatPrice";
+import Counter from "~/components/shared/counter/Counter";
 
 type ProductInfoPropsType = {
   product: Product | undefined;
@@ -125,21 +126,7 @@ const Product_Info = ({ product }: ProductInfoPropsType) => {
             <h4 className="label text-neutral-black-500 font-medium uppercase">
               {t("quantity")}
             </h4>
-            <div
-              className={` flex items-center justify-between gap-3 min-w-[164px] min-h-[44px] border border-neutral-black-100 w-fit px-4 rounded-[4px]`}
-            >
-              <span className="flex w-6 h-6 items-center justify-center cursor-pointer">
-                <MinusIcon />
-              </span>
-              <input
-                className="outline-none shadow-none w-6 h-6 items-center justify-center text-center text-neutral-black-900 body font-medium"
-                max={product.quantity}
-                value={0}
-              />
-              <span className="flex w-6 h-6 items-center justify-center cursor-pointer">
-                <PlusIcon />
-              </span>
-            </div>
+            <Counter quantity={product?.quantity} />
           </div>
         )}
         <footer className="flex items-center gap-4">

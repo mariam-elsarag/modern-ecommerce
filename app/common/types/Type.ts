@@ -42,3 +42,22 @@ export type SizesType = {
   id: number;
   size: string;
 };
+
+export type CartProductsType = {
+  title: string;
+  color: string;
+  price: number;
+  quantity: number;
+  discount: number | null;
+  stock: number;
+  size: SizesType | null;
+  cover: string;
+};
+export type CartItemType = {
+  id: number;
+  products: CartProductsType[];
+  subtotal: number;
+  shipping: "free" | number;
+  tax: "no_tax" | number;
+  total: number;
+};

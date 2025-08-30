@@ -37,12 +37,14 @@ const Button = ({
   const sizes = {
     xs: "!h-[30px] !w-[30px]",
     sm: "h-[38px] px-4 py-3 px-4",
+    md: "!w-10 !h-10",
     lg: "main_h py-3 px-5 md:px-6",
   };
   const styles = {
     primary: `bg-neutral-black-900 text-white ${hasHover ? "hover:bg-neutral-black-800" : ""}`,
+    secondary: "bg-neutral-white-100 text-neutral-black-500",
     outline: `bg-white border border-neutral-black-200 text-neutral-black-500  ${hasHover ? "hover:text-neutral-black-900" : ""}`,
-    tertiery: `bg-white bg-neutral-black-800 ${hasHover ? "hover:bg-neutral-white-100" : ""}`,
+    tertiery: `bg-white text-neutral-black-800 ${hasHover ? "hover:bg-neutral-white-100" : ""}`,
     outline_dark:
       "bg-white border border-neutral-black-900 text-neutral-black-900 ",
   };

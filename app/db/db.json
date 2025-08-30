@@ -260,5 +260,36 @@
     { "id": 4, "size": "md" },
     { "id": 5, "size": "xl" },
     { "id": 6, "size": "xxl" }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "products": [
+        {
+          "title": "Elegant Ebony Sweatshirts",
+          "cover": "/products/black_t-shirt.png",
+          "color": "white",
+          "price": 35.0,
+          "discount": 10,
+          "quantity": 1,
+          "stock": 120,
+          "size": "lg"
+        },
+        {
+          "title": "Apple AirPods Pro 2nd gen",
+          "cover": "/products/apple_earphone_image1.png",
+          "color": "white",
+          "price": 399.99,
+          "discount": 15,
+          "quantity": 1,
+          "size": null,
+          "stock": 60
+        }
+      ],
+      "subtotal": 434.99,
+      "shipping": "free",
+      "tax": 3.0,
+      "total": 437.99
+    }
   ]
 }
