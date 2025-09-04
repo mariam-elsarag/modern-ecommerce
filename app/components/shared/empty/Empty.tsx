@@ -1,7 +1,37 @@
 import React from "react";
+import type { EmptyPropsType } from "./Empty.types";
+import { EmptyStatusImg } from "~/assets/images/Image";
+import { useTranslation } from "react-i18next";
+import Button from "../button/Button";
+import { currentLanguageCode } from "~/common/utils/switchLang";
+import { ArrowIcon } from "~/assets/icons/Icon";
 
-const Empty = () => {
-  return <div>Empty</div>;
+const Empty = ({
+  image = EmptyStatusImg,
+  title,
+  des,
+  btnName,
+  btnCta,
+}: EmptyPropsType) => {
+  const { t } = useTranslation();
+  return (
+    <figure className="flex flex-col gap-6">
+      <img src={image} alt="empty" className="w-16 h-16" />
+      {title && <h3 className="h3 font-bold text-neutral-black-900"></h3>}
+      {des && <p className="body text-neutral-black-500">{t(des)}</p>}
+      {btnName && (
+        <Button
+          text={btnName}
+          handleClick={btnCta}
+          icon={
+            <span className={currentLanguageCode === "en" ? "rotate-180" : ""}>
+              <ArrowIcon fill="var(--color-neutral-white-100)" />
+            </span>
+          }
+        />
+      )}
+    </figure>
+  );
 };
 
 export default Empty;
