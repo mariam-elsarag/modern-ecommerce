@@ -14,6 +14,8 @@ const Page_Header = ({
   const style = {
     primary: ``,
     secondary: `bg-neutral-white-100 container py-[18px] `,
+    success: `bg-semantic-green-100 container py-[18px] `,
+    error: `bg-semantic-red-100 container py-[18px] `,
   };
   return (
     <header className={`  ${style[variant]} flex flex-col gap-2 `}>

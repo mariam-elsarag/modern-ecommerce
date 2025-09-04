@@ -21,4 +21,6 @@ export default [
   ]),
   route(":id/cart", "routes/cart/Cart.tsx"),
   route(":id/checkout", "routes/checkout/Checkout.tsx"),
+  route("success-payment", "routes/payment/Payment_Success.tsx"),
+  route(":id/failed-payment", "routes/payment/Payment_Failed.tsx"),
 ] satisfies RouteConfig;

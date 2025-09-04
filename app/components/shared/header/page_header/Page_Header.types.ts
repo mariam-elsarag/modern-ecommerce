@@ -8,5 +8,5 @@ export type PageHeaderTypes = {
   label?: string;
   title?: string;
   breadcrumbsList?: breadCrumbListType[];
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "success" | "error";
 };

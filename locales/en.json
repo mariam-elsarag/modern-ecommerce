@@ -125,5 +125,13 @@
   "street_is_required": "Street is required",
   "city_is_required": "City is required",
   "state_is_required": "State is required",
-  "country_is_required": "Country is required"
+  "country_is_required": "Country is required",
+  "successful_order": "Successful Order",
+  "thanks_for_sharing": "Thank you for shopping",
+  "success_payment_des": "Your order has been successfully placed and is now being processed.",
+  "go_to_my_account": "Go to my account",
+  "failed_payment_title": "Oops! There was an issue",
+  "failed_payment_desc": "Oops! There was a problem processing your order. Please review the details and try again.",
+  "reorder": "Reorder",
+  "failed_error": "Failed Order"
 }
