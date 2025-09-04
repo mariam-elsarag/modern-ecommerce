@@ -108,5 +108,22 @@
   "confirm_password_is_required": "Confirm password is required",
   "confirmPassword": "Confirm password",
   "phone_pattern_error": "Please enter a valid Egyptian phone number (e.g., 010xxxxxxxx).",
-  "phone_is_required": "Phone is required"
+  "phone_is_required": "Phone is required",
+  "acctivate_account": "Activate account",
+  "activate": "Activate",
+  "otp": "OTP",
+  "otp_is_required": "Otp is required",
+  "shipping_address": "Shipping Address",
+  "street_address": "Street Address",
+  "city": "City",
+  "state": "State",
+  "zip_code": "Zip Code",
+  "country": "Counrty",
+  "your_order": "Your order",
+  "edit_cart": "Edit Cart",
+  "place_order": "Place Order",
+  "street_is_required": "Street is required",
+  "city_is_required": "City is required",
+  "state_is_required": "State is required",
+  "country_is_required": "Country is required"
 }

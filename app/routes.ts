@@ -12,6 +12,7 @@ export default [
     route("register", "routes/auth/Register.tsx"),
     route("forget-password", "routes/auth/Forget_Password.tsx"),
     route(":email/:token/reset-password", "routes/auth/Reset_Password.tsx"),
+    route(":email/activate-account", "routes/auth/Activate_Account.tsx"),
   ]),
   index("routes/home/home.tsx"),
   ...prefix("product", [

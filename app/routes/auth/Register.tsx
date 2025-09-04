@@ -52,7 +52,7 @@ const Register = () => {
     {
       id: "2",
       formType: "input",
-      type: "text",
+      type: "email",
       name: "email",
       label: "email",
       fieldName: "email",
@@ -62,6 +62,10 @@ const Register = () => {
         pattern: {
           value: emailRegex,
           message: "email_pattern_error",
+        },
+        maxLength: {
+          value: 80,
+          message: t("max_length_error", { number: 80 }),
         },
       },
     },
@@ -79,6 +83,10 @@ const Register = () => {
           value: phonePattern,
           message: "phone_pattern_error",
         },
+        maxLength: {
+          value: 30,
+          message: t("max_length_error", { number: 30 }),
+        },
       },
     },
     {
@@ -92,6 +100,10 @@ const Register = () => {
         pattern: {
           value: passwordPattern,
           message: "password_pattern_error",
+        },
+        maxLength: {
+          value: 30,
+          message: t("max_length_error", { number: 30 }),
         },
       },
       showForgetPassword: false,
