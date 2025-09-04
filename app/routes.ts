@@ -1,4 +1,5 @@
 import {
+import { Navigate } from 'react-router';
   type RouteConfig,
   index,
   layout,
@@ -23,4 +24,13 @@ export default [
   route(":id/checkout", "routes/checkout/Checkout.tsx"),
   route("success-payment", "routes/payment/Payment_Success.tsx"),
   route(":id/failed-payment", "routes/payment/Payment_Failed.tsx"),
+  route("profile", "routes/profile/Profile_Container.tsx", [
+    route("order", "routes/profile/Orders.tsx"),
+    route("wishlist", "routes/profile/Whishlist.tsx"),
+    route("address", "routes/profile/Profile_address.tsx"),
+    route("password", "routes/profile/Profile_Password.tsx"),
+    route("account", "routes/profile/Profile_Account.tsx"),
+    index(() => <Navigate to="order" replace />),
+  ])
+  
 ] satisfies RouteConfig;
