@@ -133,5 +133,14 @@
   "failed_payment_title": "Oops! There was an issue",
   "failed_payment_desc": "Oops! There was a problem processing your order. Please review the details and try again.",
   "reorder": "Reorder",
-  "failed_error": "Failed Order"
+  "failed_error": "Failed Order",
+  "orders": "Orders",
+  "wishlist": "Wishlist",
+  "address": "Address",
+  "account_details": "Account Details",
+  "password": "Password",
+  "old_password": "Old password",
+  "old_password_is_required": "Old password is required",
+  "change_password": "Change Password",
+  "save_changes": "Save Changes"
 }
