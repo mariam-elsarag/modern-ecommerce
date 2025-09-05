@@ -30,25 +30,23 @@ const Password_Form = ({ isRest = true }: PasswordFormProps) => {
     mode: "onChange",
   });
   // _______________ list ______________
-  const formList: FormListItemType[] | null[] = [
-    !isRest
-      ? {
-          id: "1",
-          formType: "password",
-          name: "old_password",
-          label: "old_password",
-          fieldName: "old_password",
-          validator: {
-            required: "old_password_is_required",
-            pattern: {
-              value: passwordPattern,
-              message: "password_pattern_error",
-            },
-          },
-          showForgetPassword: false,
-          inlineError: false,
-        }
-      : null,
+  const formList: FormListItemType[] = [
+    !isRest && {
+      id: "1",
+      formType: "password",
+      name: "old_password",
+      label: "old_password",
+      fieldName: "old_password",
+      validator: {
+        required: "old_password_is_required",
+        pattern: {
+          value: passwordPattern,
+          message: "password_pattern_error",
+        },
+      },
+      showForgetPassword: false,
+      inlineError: false,
+    },
     {
       id: "1",
       formType: "password",
@@ -81,7 +79,7 @@ const Password_Form = ({ isRest = true }: PasswordFormProps) => {
       showForgetPassword: false,
       inlineError: false,
     },
-  ];
+  ].filter(Boolean) as FormListItemType[];
   const onSubmit = async (data) => {
     try {
       setLoading(true);
