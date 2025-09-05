@@ -142,5 +142,13 @@
   "old_password": "Old password",
   "old_password_is_required": "Old password is required",
   "change_password": "Change Password",
-  "save_changes": "Save Changes"
+  "save_changes": "Save Changes",
+  "added_on": "Added on:",
+  "ordered_on": "Ordered on:",
+  "view_item": "View item",
+  "proceessing": "Processing",
+  "remove_item": "Remove item",
+  "empty_order": "Your order history is waiting to be filled.",
+  "empty_wishlist": "Your wishlist is waiting to be filled.",
+  "start_shopping": "Start Shopping"
 }
