@@ -6,7 +6,13 @@ import type { breadCrumbListType } from "~/components/shared/header/page_header/
 import Profile_Aside from "./components/Profile_Aside";
 import Button from "~/components/shared/button/Button";
 import { ChevronIcon } from "~/assets/icons/Icon";
-
+import type { Route } from "../+types/Public_Route";
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Profile" },
+    { name: "description", content: "User profile" },
+  ];
+}
 const Profile_Container = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
