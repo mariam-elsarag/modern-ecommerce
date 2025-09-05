@@ -28,7 +28,7 @@ export default [
   layout("routes/profile/Profile_Container.tsx", [
     ...prefix("profile", [
       route("order", "routes/profile/Orders.tsx"),
-      route("wishlist", "routes/profile/Whishlist.tsx"),
+      route("wishlist", "routes/profile/Wishlist.tsx"),
       route("address", "routes/profile/Profile_address.tsx"),
       route("password", "routes/profile/Profile_Password.tsx"),
       route("account", "routes/profile/Profile_Account.tsx"),
