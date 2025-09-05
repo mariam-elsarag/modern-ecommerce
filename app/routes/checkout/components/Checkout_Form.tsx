@@ -8,10 +8,14 @@ import type {
   FormListItemType,
 } from "~/components/shared/form_builder/Form_Builder-types";
 
+type CheckoutFormProps = Pick<FormBuiderProps, "errors" | "control"> & {
+  isProfile?: boolean;
+};
 const Checkout_Form = ({
   control,
   errors,
-}: Pick<FormBuiderProps, "errors" | "control">) => {
+  isProfile = false,
+}: CheckoutFormProps) => {
   const { t } = useTranslation();
 
   const formList: FormListItemType[] = [
@@ -20,8 +24,8 @@ const Checkout_Form = ({
       formType: "input",
       type: "text",
       name: "street",
-      label: "street",
-      fieldName: "street_address",
+      label: "street_address",
+      fieldName: "street",
       validator: {
         required: "street_is_required",
         maxLength: {
@@ -90,7 +94,7 @@ const Checkout_Form = ({
         },
       },
     },
-    {
+    !isProfile && {
       id: "6",
       formType: "input",
       type: "email",
@@ -110,7 +114,7 @@ const Checkout_Form = ({
         },
       },
     },
-    {
+    !isProfile && {
       id: "7",
       formType: "input",
       type: "text",
@@ -125,9 +129,11 @@ const Checkout_Form = ({
         },
       },
     },
-  ];
+  ].filter(Boolean) as FormListItemType[];
   return (
-    <div className="sm:border-r border-b pb-10 sm:pb-0 border-neutral-black-100 flex flex-col gap-10 ">
+    <div
+      className={`${isProfile ? "" : "sm:border-r border-b pb-10 sm:pb-0 border-neutral-black-100"} flex flex-col gap-10 `}
+    >
       <h1 className="h5 font-semibold text-neutral-black-900">
         {" "}
         {t("shipping_address")}

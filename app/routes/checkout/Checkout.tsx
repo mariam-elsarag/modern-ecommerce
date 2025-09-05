@@ -67,7 +67,7 @@ const Checkout = ({ loaderData }: Route.ComponentProps) => {
         onSubmit={handleSubmit(onSubmit)}
         className="container grid sm:grid-cols-2 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_436px] gap-6 lg:gap-10 xl:gap-20"
       >
-        <Checkout_Form control={control} errors={errors} />
+        <Checkout_Form control={control} errors={errors} isProfile={false} />
         <Checkout_Order_Info />
       </form>
     </section>
