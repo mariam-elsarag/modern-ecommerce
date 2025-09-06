@@ -149,5 +149,14 @@
   "empty_wishlist": "قائمة المفضلة الخاصة بك بانتظار أن تُملأ.",
   "start_shopping": "ابدأ التسوق",
   "email": "البريد الإلكتروني",
-  "_forget_password": "هل نسيت كلمة المرور؟"
+  "_forget_password": "هل نسيت كلمة المرور؟",
+  "fullName": "الاسم الكامل",
+  "message": "الرسالة",
+  "message_is_required": "الرسالة مطلوبة",
+  "send": "إرسال",
+  "only_upload_images": "يمكنك رفع حتى {{limit}} صورة فقط.",
+  "exceed_limit": "تجاوز الحد المسموح وهو {{size}} ميغابايت.",
+  "error_image_type": "صيغة الصورة غير صالحة. يرجى رفع ملف صورة صحيح.",
+  "error_file_type": "صيغة الملف غير صالحة. يرجى رفع ملف صحيح.",
+  "attachment": "مرفق"
 }

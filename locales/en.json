@@ -152,5 +152,14 @@
   "empty_wishlist": "Your wishlist is waiting to be filled.",
   "start_shopping": "Start Shopping",
   "email": "Email",
-  "_forget_password": "Forgot Password?"
+  "_forget_password": "Forgot Password?",
+  "fullName": "Full name",
+  "message": "Message",
+  "message_is_required": "Message is required",
+  "send": "Send",
+  "only_upload_images": "You can only upload up to {{limit}} images.",
+  "exceed_limit": "has exceeded the limit of {{size}} MB.",
+  "error_image_type": "Invalid image format. Please upload a valid image file.",
+  "error_file_type": "Invalid file format. Please upload a valid file.",
+  "attachment": "Attachment"
 }
