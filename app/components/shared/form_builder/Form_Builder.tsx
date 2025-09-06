@@ -10,12 +10,14 @@ import {
 import Rate from "../rate/Rate";
 import Password from "./Password";
 import Phone_Number from "./Phone_Number";
+import Upload_Media from "./Upload_Media";
 
 const Form_Builder = ({
   formList,
   control,
   errors,
   loading,
+  setError,
 }: FormBuiderProps) => {
   const { t } = useTranslation();
   const renderField = (
@@ -109,6 +111,21 @@ const Form_Builder = ({
             changeValue
             hasText={false}
             hasError={isInvalid}
+          />
+        );
+      case "media":
+        return (
+          <Upload_Media
+            variant={item?.variant}
+            validTypes={item?.validTypes}
+            setError={setError}
+            error={error?.message || errors?.[item?.fieldName]?.message}
+            handleChange={(e) => {
+              field.onChange(e);
+            }}
+            value={field.value || item.value || ""}
+            disabled={item.disabled || loading}
+            item={item}
           />
         );
       default:

@@ -6,7 +6,8 @@ export type FormType =
   | "phone"
   | "password"
   | "textarea"
-  | "rate";
+  | "rate"
+  | "media";
 
 type OptionListType = {
   name: string;
@@ -26,6 +27,8 @@ export type FormListItemType = {
   optionList?: OptionListType[];
   value?: string | undefined;
   name?: string;
+  variant?: "file" | "profile";
+  validTypes?: string[];
   inputMode?:
     | "search"
     | "text"
@@ -42,7 +45,12 @@ export type FormListItemType = {
   loading?: boolean;
   errorFill?: string;
   inlineError?: boolean;
+  isMultiple?: boolean;
+  isEdit?: boolean;
   fillColor?: string;
+  title?: string;
+  limit?: number;
+  setListDeleteImages?: (list: string[] | number[]) => void;
   showForgetPassword?: boolean;
   action?: (e: React.ChangeEvent<HTMLElement>) => void;
   onInput?: (
@@ -58,4 +66,5 @@ export type FormBuiderProps = {
   control: Control<any>;
   errors: FieldErrors<FormValues>;
   loading?: boolean;
+  setError?: (name?: string, error?: any) => void;
 };
