@@ -1108,6 +1108,29 @@ export const LanguageIcon = ({
     </svg>
   );
 };
+export const UploadCloudIcon = ({
+  width = "24",
+  height = "24",
+  fill = "var(--color-neutral-black-500)",
+}: iconProps) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.5 21V13.5M12.5 13.5L10.5 15.5M12.5 13.5L14.5 15.5M7 18.7101C4.10851 17.8496 2 15.171 2 12C2 8.13401 5.13401 5 9 5C11.8892 5 14.3696 6.75042 15.4386 9.24864C15.9299 9.08728 16.4547 9 17 9C19.7614 9 22 11.2386 22 14C22 16.419 20.2822 18.4367 18 18.9"
+        stroke={fill}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
 export const GoogleIcon = ({
   width = "24",
   height = "24",
