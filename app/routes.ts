@@ -21,6 +21,7 @@ export default [
     index("routes/product/Products.tsx"),
     route(":id", "routes/product/Product_Details.tsx"),
   ]),
+  route("contact", "routes/contact/Contact.tsx"),
   route(":id/cart", "routes/cart/Cart.tsx"),
   route(":id/checkout", "routes/checkout/Checkout.tsx"),
   route("success-payment", "routes/payment/Payment_Success.tsx"),
