@@ -25,7 +25,7 @@ const Button = ({
 
   const base = `
     ${hasFullWidth ? "w-full" : "w-fit"}
-    flex items-center  body font-medium  transition-all ease-in-out duration-300
+    flex items-center gap-2 body font-medium  transition-all ease-in-out duration-300
     ${isCenterd && "justify-center text-center"}
    ${loading || disabled ? "cursor-default" : "cursor-pointer"}
   ${disabled ? "!bg-neutral-black-100 !text-neutral-black-200" : ""} `;
