@@ -22,7 +22,7 @@ It includes essential ecommerce features like product listings, authentication, 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/modern-ecommerce.git
+git clone https://github.com/mariam-elsarag/modern-ecommerce.git
 cd modern-ecommerce
 ```
 
