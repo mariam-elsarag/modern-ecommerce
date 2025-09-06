@@ -36,30 +36,31 @@ const Pagination = ({
   return (
     <div className="flex items-center justify-center gap-2">
       {" "}
-      <div className="flex_center_y">
-        <button
-          className={` outline-0 shadow-none ${
-            currentPage === 1 ? "cursor-default" : "cursor-pointer"
-          } flex items-center justify-center `}
-          onClick={onPrevious}
-        >
-          <span className={currentLanguageCode === "en" ? "" : "rotate-180"}>
-            <ChevronIcon
-              width="24"
-              height="24"
-              fill={
-                currentPage === 1
-                  ? "var(--color-neutral-black-500)"
-                  : "var(--color-neutral-black-900)"
-              }
-            />
-          </span>
-        </button>
-      </div>
+      <button
+        className={` outline-0 shadow-none ${
+          currentPage === 1 ? "cursor-default" : "cursor-pointer"
+        } flex items-center justify-center w-10 h-10 `}
+        onClick={onPrevious}
+      >
+        <span className={currentLanguageCode === "en" ? "" : "rotate-180"}>
+          <ChevronIcon
+            width="24"
+            height="24"
+            fill={
+              currentPage === 1
+                ? "var(--color-neutral-black-500)"
+                : "var(--color-neutral-black-900)"
+            }
+          />
+        </span>
+      </button>
       {paginationRange?.map((pageNumber, index) => {
         if (pageNumber === DOTS) {
           return (
-            <div key={index} className="pagination-item dots">
+            <div
+              key={index}
+              className="flex items-center justify-center w-10 h-10 rounded-lg dots"
+            >
               <svg
                 width="13"
                 height="4"
@@ -79,7 +80,7 @@ const Pagination = ({
         return (
           <div
             key={index}
-            className={`body font-normal    transition-all ease-in-out duration-300 flex items-center justify-center w-8 h-8 rounded-md ${
+            className={`body font-normal    transition-all ease-in-out duration-300 flex items-center justify-center w-10 h-10 rounded-lg ${
               pageNumber === currentPage
                 ? "bg-neutral-white-100 text-neutral-black-900"
                 : "cursor-pointer text-neutral-black-900"
@@ -93,7 +94,7 @@ const Pagination = ({
       <button
         className={`outline-none shadow-none ${
           currentPage === lastPage ? "cursor-default" : "cursor-pointer"
-        } flex items-center justify-center `}
+        } flex items-center justify-center w-10 h-10 rounded-lg `}
         onClick={onNext}
       >
         <span className={currentLanguageCode === "en" ? "rotate-180" : ""}>
