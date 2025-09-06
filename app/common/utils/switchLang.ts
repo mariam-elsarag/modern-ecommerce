@@ -1,7 +1,7 @@
 import i18n from "../../../i18n";
 import Cookies from "js-cookie";
 
-export let currentLanguageCode = Cookies.get("i18next") || "ar";
+export let currentLanguageCode = Cookies.get("i18next") || "en";
 export function switchLang(lang?: "en" | "ar") {
   const targetLanguage = lang
     ? lang

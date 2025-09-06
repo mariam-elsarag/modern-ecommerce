@@ -40,7 +40,13 @@ const Orders = () => {
         </section>
         {data?.length > 0 && (
           <div className="flex items-center justify-center">
-            <Pagination />
+            <Pagination
+              currentPage={1}
+              pages={10}
+              onPageChange={(n: number) => {
+                console.log(n);
+              }}
+            />
           </div>
         )}
       </div>

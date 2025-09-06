@@ -59,7 +59,7 @@ const Password = ({
             className="text-neutral-black-500 label font-medium  flex  justify-end "
             to="/forget-password"
           >
-            {t("forget_password")}?
+            {t("_forget_password")}
           </Link>
         )}
       </div>
