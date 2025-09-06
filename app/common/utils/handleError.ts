@@ -4,7 +4,7 @@ import type { UseFormSetError, FieldValues, Path } from "react-hook-form";
 export const handleError = <T extends FieldValues>(
   error: any,
   t,
-  setError: any
+  setError?: any
 ) => {
   const err = error?.response?.data;
   const details = err?.error?.email || err?.error?.password || err?.message;

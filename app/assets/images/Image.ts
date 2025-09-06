@@ -10,6 +10,9 @@ export { default as HeroImg4 } from "./hero/macbook_image.png";
 
 // category
 export { default as CategoryHeroImg } from "./home/category/Category Image.svg";
-
+// payment
 export { default as SuccessPaymentImg } from "./payment/success_payment.svg";
 export { default as FailedPaymentImg } from "./payment/failed_payment.svg";
+
+// empty
+export { default as EmptyStatusImg } from "./empty/empty_state.svg";

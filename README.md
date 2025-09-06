@@ -1,87 +1,129 @@
-# Welcome to React Router!
+# Modern Ecommerce
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Modern Ecommerce is a UI-based ecommerce application built with **React Router Framework** and **server-side rendering**, powered by a **JSON Server** backend.  
+It includes essential ecommerce features like product listings, authentication, profile management (orders, wishlist, password change, account details, and address updates), cart, checkout, and home page.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+---
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **Products Page** with filtering
+- **Authentication** (Login, Register)
+- **Profile Management**: Orders, Wishlist, Password change, Account details, Addresses
+- **Cart & Checkout**
+- **Home Page**
+- **Server-Side Rendering with React Router**
+- **Mock API using JSON Server**
 
-## Getting Started
+---
 
-### Installation
+## Installation
 
-Install the dependencies:
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/yourusername/modern-ecommerce.git
+cd modern-ecommerce
+```
+
+### 2. Install dependencies
+
+```
 npm install
 ```
 
-### Development
+### 3.Run JSON Server
 
-Start the development server with HMR:
+```
+npx json-server --watch ./app/db/db.json --port 5000
+```
 
-```bash
+### 4.Start development server
+
+```
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## Project Structure
 
 ```
 ├── package.json
 ├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
 ├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+│   ├── client/          # Static assets
+│   └── server/          # Server-side code
+├── app/
+│   ├── assets/
+│   │   ├── icons/       # Icon files
+│   │   ├── images/      # Image folders
+│   │   ├── export.ts    # Export all images
+│   │   └── styles/
+│   │       ├── base/            # Sass config
+│   │       │   └── _style.scss
+│   │       ├── config/          # Tailwind config
+│   │       │   └── tailwind_config.js
+│   │       ├── lib/             # External library styles
+│   │       │   ├── _toast.scss
+│   │       │   └── _prime_dialog.scss
+│   │       └── utils/           # Utilities
+│   │           ├── _font.scss
+│   │           └── _utils.scss
+│   │
+│   ├── common/
+│   │   ├── constants/
+│   │   │   ├── constant.ts
+│   │   │   ├── validator.ts
+│   │   │   ├── list/            # Example: menuList
+│   │   │   └── types/           # Type definitions
+│   │   └── utils/               # Reusable functions
+│   │       ├── switchLang.ts
+│   │       └── handleErrors.ts
+│   │
+│   ├── components/
+│   │   ├── layout/              # Navbar, Footer, Layout parts
+│   │   └── shared/              # UI Components (Filter, Badge, Card)
+│   │
+│   ├── db/
+│   │   └── db.json              # JSON Server mock data
+│   │
+│   ├── hooks/
+│   │   ├── useGetData.ts
+│   │   ├── usePaginatedData.ts
+│   │   └── useOutsideClick.ts
+│   │
+│   ├── layout/
+│   │   └── AppLayout.tsx
+│   │
+│   ├── routes/
+│   │   ├── auth/                # Login, Register, etc.
+│   │   ├── profile/             # Profile-related pages
+│   │   ├── checkout/
+│   │   ├── cart/
+│   │   ├── home/
+│   │   └── products/
+│   │
+│   ├── services/
+│   │   ├── apiUrl.ts            # API Endpoints
+│   │   └── axiosInstance.ts     # Axios instance
+│   │
+│   ├── locales/
+│   │   ├── en/                  # English translations
+│   │   └── ar/                  # Arabic translations
+
 ```
 
-## Styling
+## Tech Stack
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- React Router Framework
+- JSON Server
+- React + TypeScript
+- Sass
+- Tailwind CSS
+- Axios
 
----
+## Scripts
 
-Built with ❤️ using React Router.
+- `npm run dev`
+- `npm run build`
+- `npm run start`
+- `npx json-server --watch ./app/db/db.json --port 5000`
